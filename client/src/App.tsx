@@ -8,9 +8,9 @@ import { SetToken, SetShowSignup } from "../types";
 
 function App() {
   const [token, setToken] = useState<string | null>(
-    "vdbdjdndh39y374747t4g44gbhb7y4h"
+    localStorage.getItem("token")
   );
-  const [showSignup, setShowSignup] = useState<boolean>(false);
+  const [showSignup, setShowSignup] = useState<boolean>(true);
 
   const handleLogout = (): void => {
     localStorage.removeItem("token");
