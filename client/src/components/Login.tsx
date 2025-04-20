@@ -49,6 +49,9 @@ const Login = ({ setToken, setShowSignup }: LoginProps) => {
               Login
             </button>
           </form>
+          <p className="text-sm mt-5">
+            Don't have an account yet? <a href="/signup" className="text-[#815EEA]">Sign up</a>
+          </p>
         </div>
       </div>
     </div>

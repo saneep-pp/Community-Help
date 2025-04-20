@@ -30,32 +30,34 @@ const Signup = ({ setToken, setShowSignup }: LoginProps) => {
       <div className="bg-white w-full lg:w-1/2 h-auto rounded-2xl flex items-center justify-center">
         <div className="flex flex-col justify-center items-center w-full h-full p-6 py-10">
           <div className="text-black font-semibold text-2xl">Sign up</div>
-          <p className="text-gray-600 mt-2">Enter your details below to create your account</p>
+          <p className="text-gray-600 mt-2">
+            Enter your details below to create your account
+          </p>
           <form className="w-full sm:w-3/4 px-2 mt-6">
-          <div className="w-full flex gap-5">
-          <input
-              type="text"
-              placeholder="First Name"
-              className="border border-gray-300 rounded-lg p-2 w-1/2 mt-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
-            />
+            <div className="w-full flex gap-5">
               <input
-              type="text"
-              placeholder="Last Name"
-              className="border border-gray-300 rounded-lg p-2 w-1/2 mt-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
-            />
-          </div>
-         
-                <input
+                type="text"
+                placeholder="First Name"
+                className="border border-gray-300 rounded-lg p-2 w-1/2 mt-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+              <input
+                type="text"
+                placeholder="Last Name"
+                className="border border-gray-300 rounded-lg p-2 w-1/2 mt-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+
+            <input
               type="text"
               placeholder="Email"
               className="border border-gray-300 rounded-lg p-2 w-full mt-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
-                <input
+            <input
               type="text"
               placeholder="Phone Number"
               className="border border-gray-300 rounded-lg p-2 w-full mt-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
             />
-          
+
             <input
               type="password"
               placeholder="Password"
