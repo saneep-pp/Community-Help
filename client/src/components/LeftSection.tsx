@@ -8,7 +8,7 @@ function LeftSection() {
           Community Help
         </h1>
         <h4 className="text-white font-normal pt-2 text-lg">
-         Connecting communities for a better tomorrow.
+          Connecting communities for a better tomorrow.
         </h4>
         <p className="text-white mt-6 text-sm lg:text-base max-w-xl">
           Everyone needs help sometimes. Here, you can post your requirements

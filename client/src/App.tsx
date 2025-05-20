@@ -25,7 +25,7 @@ function App() {
       <div className="min-h-screen bg-gray-100 w-full h-full">
         {token && <Header />}
 
-        <main className="container w-full h-full">
+        <main className="container flex flex-col w-full h-screen flex-wrap">
           <Routes>
             <Route
               path="/"
