@@ -13,3 +13,7 @@ export type LoginProps = {
 export type TokenType = {
   token: string | null;
 };
+export interface HeaderProps {
+  token: string | null;
+  setToken: (token: string | null) => void;
+}

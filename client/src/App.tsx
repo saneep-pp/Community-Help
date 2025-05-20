@@ -4,12 +4,15 @@ import { Color } from "./colors";
 import Signup from "./components/Signup";
 import PostList from "./components/PostList";
 import Login from "./components/Login";
+import Header from "./components/Header";
 import PostForm from "./components/PostForm";
+import Footer from "./components/Footer";
 
 function App() {
   const [token, setToken] = useState<string | null>(
-    localStorage.getItem("token")
-  );
+    // localStorage.getItem("token")
+    "dydudbdcdcudbcduducdu"
+  ); // Simulating a logged-in state
   const [showSignup, setShowSignup] = useState<boolean>(false);
 
   const handleLogout = (): void => {
@@ -20,20 +23,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-gray-100 w-full h-full">
-        {token && (
-          <header
-            style={{ backgroundColor: Color.primaryColor }}
-            className="flex justify-between text-white p-4 h-1/12"
-          >
-            <h1 className="text-2xl font-bold">Community Help</h1>
-            <button
-              className="rounded-md p-2 border-2 bg-white text-[#717171] cursor-pointer hover:text-white hover:bg-[#815EEA] in-hover:transform-3d"
-              onClick={handleLogout}
-            >
-              Logout
-            </button>
-          </header>
-        )}
+        {token && <Header />}
 
         <main className="container w-full h-full">
           <Routes>
@@ -65,17 +55,25 @@ function App() {
               path="/posts"
               element={
                 token ? (
-                  <>
-                    <PostForm token={token} />
-                    <PostList token={token} />
-                  </>
+                  <PostList token={token} />
                 ) : (
-                  <Navigate to="/signup" replace />
+                  <Navigate to="/login" replace />
+                )
+              }
+            />
+            <Route
+              path="/create-post"
+              element={
+                token ? (
+                  <PostForm token={token} />
+                ) : (
+                  <Navigate to="/login" replace />
                 )
               }
             />
           </Routes>
         </main>
+        {token && <Footer />}
       </div>
     </BrowserRouter>
   );
