@@ -10,22 +10,16 @@ import Footer from "./components/Footer";
 
 function App() {
   const [token, setToken] = useState<string | null>(
-    // localStorage.getItem("token")
-    "dydudbdcdcudbcduducdu"
+    localStorage.getItem("token")
   ); // Simulating a logged-in state
   const [showSignup, setShowSignup] = useState<boolean>(false);
 
-  const handleLogout = (): void => {
-    localStorage.removeItem("token");
-    setToken(null);
-  };
-
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gray-100 w-full h-full">
-        {token && <Header />}
+      <div className="min-h-screen bg-gray-100 w-full h-full flex flex-col justify-around">
+        {token && <Header token={token} setToken={setToken} />}
 
-        <main className="container flex flex-col w-full h-screen flex-wrap">
+        <main className="container  w-full h-screen ">
           <Routes>
             <Route
               path="/"

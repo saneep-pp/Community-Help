@@ -1,8 +1,14 @@
 import React from "react";
 import { LoginProps } from "../../types";
 import LeftSection from "./LeftSection";
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ setToken, setShowSignup }: LoginProps) => {
+  const navigate = useNavigate();
+  const handleLogin = () => {
+    localStorage.setItem("token", "fcsbivbdbdh7gvhee7fvv");
+    navigate("/posts");
+  };
   return (
     <div className="flex flex-col sm:flex-col-reverse lg:flex-row p-4 lg:p-7 bg-[#c6baec] gap-6 h-screen w-screen">
       {/* Left Section */}
@@ -27,6 +33,7 @@ const Login = ({ setToken, setShowSignup }: LoginProps) => {
             <button
               type="submit"
               className="bg-[#927fce] hover:bg-[#815EEA] text-white font-semibold py-2 px-4 rounded-lg mt-6 w-full"
+              onClick={handleLogin}
             >
               Login
             </button>

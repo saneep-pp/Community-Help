@@ -2,13 +2,17 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { HeaderProps } from "../../types";
+import { useNavigate } from "react-router-dom";
 
 const Header = ({ token, setToken }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-
+  const navigate = useNavigate();
   const handleLogout = () => {
+    console.log("logout clicked");
     localStorage.removeItem("token");
-    setToken(null);
+    setToken(null); // Update token state
+    navigate("/login");
+    setIsMenuOpen(false);
   };
 
   return (
